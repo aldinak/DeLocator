@@ -1,59 +1,27 @@
-name: Build
+name: Android Buildozer
 on:
   push:
-    branches-ignore:
-      - data
-      - gh-pages
-    tags:
-      - '**'
+    branches: [ main ]
   pull_request:
-    branches-ignore:
-      - data
-      - gh-pages
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 1,15 * *'
 
 jobs:
-  # Build job. Builds app for Android with Buildozer
-  build-android:
-    name: Build for Android
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' && (github.event_name == 'schedule' || (github.event_name == 'create' && github.event.ref_type == 'tag') || contains(github.event.head_commit.message, '[build android apk]')) || contains(github.event.pull_request.title, '[build android apk]')
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: master
-          
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-          architecture: x64
-          
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install --upgrade Cython
-
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
+      - uses: actions/checkout@v3
+      - name: setup docker
         id: buildozer
-        with:
-          repository_root: master
-          workdir: .
-          buildozer_version: stable
+        run: docker build . -t local -f tools/build/build_android.dockerfile
+      - name: build with buildozer
+        run: docker run -i -v $PWD:/srv -w/srv local /bin/bash ./tools/build/build_android.sh
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: ${{ steps.buildozer.outputs.filename }}
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: data
-          ref: data # Branch name
-
-      - name: Push binary to data branch
-        if: github.event_name == 'push'
-        run: python master/.ci/move_binary.py "${{ steps.buildozer.outputs.filename }}" master data bin
+          path: build/android/bin/*.apk
