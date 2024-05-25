@@ -5,7 +5,8 @@ source:
   include_patterns: "*.py, *.png"
 
 requirements:
-  - kivy
+  - python3
+  - kivy==2.0.0
   - kivy_garden.mapview
   - geopy
   - requests
@@ -14,14 +15,3 @@ requirements:
 
 android:
   permissions: INTERNET, ACCESS_FINE_LOCATION
-
-  # Presplash and icon are specified in the spec file, no need to duplicate here
-  # presplash: path/to/presplash.png
-  # icon: path/to/icon.png
-
-  # The version is specified in the spec file, no need to duplicate here
-  # version: 1.0
-
-  arch: armeabi-v7a, arm64-v8a, x86, x86_64
-
-  # Other android-specific configurations can be added here if needed
