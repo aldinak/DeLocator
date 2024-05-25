@@ -21,7 +21,7 @@ entrypoint = main.py
 
 # (list) Application requirements
 # Specify the modules used in your app here
-requirements = python3,kivy,kivy_garden.mapview,geopy,pyperclip,requests,overpass
+requirements = sdl2,python3,kivy==2.3.0,kivy_garden.mapview,geopy,pyperclip,requests,overpass
 
 # (list) Garden requirements
 # Specify any Kivy Garden packages used in your app here
@@ -78,7 +78,7 @@ android.package_type = debug
 android.sdk = 28
 
 # (str) Android's NDK version to use (default is 17c)
-android.ndk = 17c
+android.ndk = 25
 
 # (str) Android's NDK API level to use (default is 21)
 android.ndk_api = 21
