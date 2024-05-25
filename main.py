@@ -109,7 +109,7 @@ class MapWithMarker(BoxLayout):
         self.address_input = TextInput(hint_text='Enter Address', size_hint=(0.7, None), height=dp(50), multiline=False, background_normal='', background_active='')
         self.address_input.bind(text=self.on_text)  # Bind text change
         self.address_input.bind(focus=self.on_focus)  # Bind focus
-        self.copy_button = Button(text='Copy', size_hint=(None, None), size=(dp(100), dp(50)), background_color=(0.1, 0.7, 0.3, 1), background_normal='', background_down='')
+        self.copy_button = Button(text='Copy', size_hint=(None, None), size=(dp(100), dp(50)), background_color=(0.5, 0.5, 0.5, 1), background_normal='', background_down='')
         self.copy_button.bind(on_press=self.copy_text)
 
         # Speichern-Button
@@ -339,7 +339,7 @@ class MapWithMarker(BoxLayout):
     def copy_text(self, instance):
         pyperclip.copy(self.address_input.text)
         instance.background_color = (0.5, 0.9, 0.5, 1)  # Green background color for feedback
-        Clock.schedule_once(lambda dt: setattr(instance, 'background_color', (0.1, 0.7, 0.3, 1)), 0.5)  # Reset background color after 0.5 seconds
+        Clock.schedule_once(lambda dt: setattr(instance, 'background_color', (0.5, 0.5, 0.5, 1)), 0.5)  # Reset background color after 0.5 seconds
 
     def open_save_popup(self, instance):
         address = self.address_input.text
@@ -406,6 +406,7 @@ class StartScreen(Screen):
         # Platzhalter oberhalb der Buttons (nimmt nur den verfügbaren Platz oberhalb des Logos ein)
         layout.add_widget(BoxLayout(size_hint=(1, None), height=(Window.height - dp(200))))
 
+
         # Logo hinzufügen (zentriert)
         logo = Image(source='logo.png', size_hint=(None, None), size=(dp(300), dp(300)), pos_hint={'center_x': 0.5})
         layout.add_widget(logo)
@@ -417,9 +418,16 @@ class StartScreen(Screen):
         # Platzhalter unterhalb der Buttons (nimmt den verfügbaren Platz unterhalb der Buttons ein)
         layout.add_widget(BoxLayout(size_hint=(1, None), height=(Window.height - logo.height) / 2))
 
+
+
         self.add_widget(layout)
 
+
+
     def create_buttons(self):
+
+
+
         button_grid = GridLayout(cols=1, spacing=20, size_hint_y=None)
 
         generate_new_button = Button(text='Generate New', size_hint_y=None, height=dp(50),
@@ -430,8 +438,18 @@ class StartScreen(Screen):
                                         background_color=(0.3, 0.6, 0.9, 1), background_normal='', background_down='')
         saved_locations_button.bind(on_release=self.show_saved_locations)
 
+        info_button_layout = AnchorLayout(anchor_x='right', anchor_y='bottom', size_hint=(None, None),
+                                          size=(Window.width-dp(50), dp(110)))
+        info_button = Button(background_normal='info.png', background_down='info.png', size_hint=(None, None),
+                             size=(dp(40), dp(40)), background_color=(0.3, 0.6, 0.9, 1))
+
+        info_button.bind(on_release=self.info_button_popup)
+        info_button_layout.add_widget(info_button)
+
+
         button_grid.add_widget(generate_new_button)
         button_grid.add_widget(saved_locations_button)
+        button_grid.add_widget(info_button_layout)
 
         return button_grid
 
@@ -446,6 +464,10 @@ class StartScreen(Screen):
         else:
             no_saved_locations_popup = Popup(title='Saved Locations', content=Label(text="No saved locations found."), size_hint=(None, None), size=(400, 200))
             no_saved_locations_popup.open()
+
+    def info_button_popup(self, instance):
+        info_button_popup = Popup(title='Info', content=Label(text="Info"), size_hint=(None, None), size=(400, 200))
+        info_button_popup.open()
 
 
 class MapScreen(Screen):
@@ -468,6 +490,12 @@ class MyApp(App):
         sm.add_widget(MapScreen(name='map'))
 
         return sm
+
+    def on_pause(self):
+
+        return True
+    def on_resume(self):
+        pass
 
 
 def load_saved_locations():
