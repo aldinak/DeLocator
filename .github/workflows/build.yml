@@ -23,8 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y kivy  
           python -m pip install --upgrade pip
+          python -m pip install kivy
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run main script
