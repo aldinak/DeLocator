@@ -21,7 +21,7 @@ entrypoint = main.py
 
 # (list) Application requirements
 # Specify the modules used in your app here
-requirements = sdl2,python3,kivy==2.3.0,Kivy-Garden,geopy,pyperclip,requests,overpass
+requirements = sdl2,python3,kivy==2.3.0,kivy_garden.graph,geopy,pyperclip,requests,overpass
 
 # (list) Garden requirements
 # Specify any Kivy Garden packages used in your app here
