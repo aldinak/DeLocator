@@ -22,10 +22,10 @@ requirements = kivy, kivy_garden.mapview, geopy, requests, overpass, pyperclip
 fullscreen = 0
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/presplash.png
+#presplash.filename = %(source.dir)s/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/icon.png
+#icon.filename = %(source.dir)s/icon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
