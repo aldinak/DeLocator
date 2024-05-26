@@ -30,573 +30,245 @@ garden_requirements = kivy_garden.mapview
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
 
+# (list) List of service to declare
+#services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
+
+#
+# OSX Specific
+#
+
+#
+# author = © Copyright Info
+
+# change the major version of python used by the app
+osx.python_version = 3
+
+# Kivy version to use
+osx.kivy_version = 1.9.1
+
+#
+# Android specific
+#
+
+# (bool) Indicate if the application should be fullscreen or not
+fullscreen = 0
+
+# (string) Presplash background color (for new android toolchain)
+# Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
+# red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
+# darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
+# olive, purple, silver, teal.
+#android.presplash_color = #FFFFFF
+
 # (list) Permissions
-# Permissions that your app needs (INTERNET is necessary for network operations)
 android.permissions = INTERNET
 
-# (bool) Enable android storage permission
-android.permission.storage = True
+# (int) Target Android API, should be as high as possible.
+#android.api = 27
 
-# (str) The package format for android
-android.arch = armeabi-v7a
-
-# (str) Path to the icon file
-icon.filename = %(source.dir)s/data/icon.png
-
-# (str) Path to the presplash file
-presplash.filename = %(source.dir)s/data/presplash.png
-
-# (str) Full name including namespace of the main activity
-#android.entrypoint = org.kivy.android.PythonActivity
-
-# (str) Full name including namespace of the Java class to launch the activity
-#android.bootstrap = org.kivy.android.PythonBootstrap
-
-# (list) Add screensavers support to your app
-# (add screensavers from the screensavers repo to your project and include their names here)
-#screensavers =
-
-
-# (str) The service to run
-#android.service = myservice:MyService
-
-# (str) API keys
-#api = 
-
-# (str) The format used to package the app for Android
-# Default is "release" but can be set to "debug" for testing.
-android.package_type = debug
-
-# (list) Android additional libraries
-#android.add_libs_armeabi = libs/android/*.so
-#android.add_libs_x86 = libs/android-x86/*.so
-
-# (str) Path to a custom android NDK (if needed)
-#android.ndk_path =
-
-# (list) Android's SDK API to install (default is 27)
-android.sdk = 28
-
-# (str) Android's NDK version to use (default is 17c)
-android.ndk = 25
-
-# (str) Android's NDK API level to use (default is 21)
-android.ndk_api = 21
-
-# (list) Android additional Java dependencies
-#android.add_jars =
-
-# (list) Android additional libraries
-#android.add_libs_armeabi_v7a =
-
-# (list) Android additional libraries
-#android.add_libs_x86 =
-
-# (list) Android additional libraries
-#android.add_libs_x86_64 =
-
-# (list) Android additional libraries
-#android.add_libs_arm64_v8a =
-
-# (str) Keystore file
-#android.release_keystore =
-
-# (str) Keystore password
-#android.release_keyalias =
-
-# (str) Keystore alias password
-#android.release_keypassword =
-
-# (str) Custom source folders (if any)
-# Add custom source folders to this list (comma separated)
-#custom.source_folders = src
-
-# (str) Custom build folder (if any)
-#custom.build = 
-
-# (str) Custom packaging options (if any)
-#custom.packaging =
-
-# (str) Name of the executable generated for your application (for android this is a .apk)
-#executable =
-
-# (list) Gradle dependencies
-# A list of Gradle dependencies to use.
-#gradle.dependencies = "com.android.support:appcompat-v7:27.1.1"
-
-# (list) Additional python dependencies
-#requirements.python =
-
-# (str) Custom python build
-#python.build =
-
-# (str) Custom python build 
-#python.root =
-
-# (str) Path to the kivy source code to use (this can be a local directory, or a git url)
-#kivy.source = 
-
-# (str) Kivy git tag or branch to use (default is master)
-#kivy.branch = master
-
-# (str) Path to the buildozer plugins (if any)
-#plugins.path =
-
-# (list) Extra arguments to pass to the buildozer command
-#buildozer.extra_args = 
-
-# (str) Where to store build and distribution files (default is build/)
-#builddir = build
-
-# (str) Clean build directory before building
-#clean_build_dir = True
-
-# (str) App name as displayed in notifications
-#notif.name = %(app_title)s
-
-# (str) Use the Cython prebuilt binaries (this can make the build faster, only available for python 2.x)
-#cython_binary =
-
-# (list) Additional cython arguments
-#cython_args =
-
-# (str) The android log level (default is INFO)
-#android.log_level = INFO
-
-# (list) Screen sizes to exclude from apk
-#screen.exclude =
-
-# (list) Supported architectures
-#arch = armeabi-v7a
-
-# (str) The console log level (default is DEBUG)
-#console.log_level = DEBUG
-
-# (str) Log format
-#console.log_format =
-
-# (list) The build commands to execute (default is clean, update, build)
-#build_commands = clean, update, build
-
-# (str) The default build mode (default is release)
-#build_mode = release
-
-# (str) Path to the Android NDK (default is ~/.buildozer/android/platform/android-ndk-r20b)
-#android.ndk_path =
-
-# (str) Path to the Android SDK (default is ~/.buildozer/android/platform/android-sdk)
-#android.sdk_path =
-
-# (str) Path to a custom Android SDK
-#android.custom_sdk_path =
-
-# (str) Use a specific build platform (default is auto)
-#android.build_platform = auto
-
-# (str) Path to your kivy app (default is .)
-#app.root = .
-
-# (str) The package format for iOS
-#ios.archs = arm64, armv7, i386
-
-# (str) The Xcode project folder
-#ios.xcode = 
-
-# (str) Full path to your iOS certificate
-#ios.certificate =
-
-# (str) Full path to your iOS provisioning profile
-#ios.profile =
-
-# (str) Full path to your iOS team ID
-#ios.team =
-
-# (str) The version of the OpenSSL library to use
-#openssl =
-
-# (str) The version of the sqlite3 library to use
-#sqlite =
-
-# (str) The version of the SDL2 library to use
-#sdl2 =
-
-# (str) The version of the Pygame library to use
-#pygame =
-
-# (str) Path to your iOS app icon (default is .)
-#ios.icon_path = 
-
-# (str) Path to your iOS launch image (default is .)
-#ios.launch_image_path = 
-
-# (str) Full path to the directory containing your iOS framework files (if any)
-#ios.frameworks_path = 
-
-# (str) Full path to the directory containing your iOS resource files (if any)
-#ios.resources_path = 
-
-# (str) Full path to the directory containing your iOS asset catalog files (if any)
-#ios.assets_path = 
-
-# (str) The minimum iOS version to support (default is 9.0)
-#ios.min_version = 9.0
-
-# (list) List of Xcode targets to build (default is all)
-#xcode.targets = all
-
-# (str) Custom Xcode schemes
-#xcode.schemes = 
-
-# (list) Additional iOS build settings
-#ios.build_settings =
-
-# (list) List of files to be included in the Xcode project
-#xcode.extra_files =
-
-# (list) List of files to be included in the Android project
-#android.extra_files =
-
-# (list) List of files to be included in the iOS project
-#ios.extra_files =
-
-# (str) Path to your custom python script (if any)
-#python.custom_script =
-
-# (str) The path to a custom main.c file (for advanced use only)
-#android.custom_main =
-
-# (str) Custom cython build command
-#cython.build =
-
-# (str) Custom build commands (default is update, clean, build)
-#build_commands = update, clean, build
-
-# (str) Build the app in a specific architecture (default is armeabi-v7a)
-#android.arch = armeabi-v7a
-
-# (str) Custom name for the apk file (default is %(package.name)s)
-#android.apk_name =
-
-# (str) Custom name for the iOS app (default is %(app_title)s)
-#ios.app_name =
-
-# (list) Custom args to pass to the android build system
-#android.extra_args =
-
-# (list) Custom args to pass to the ios build system
-#ios.extra_args =
-
-# (str) Path to the Java development kit
-#java.jdk =
-
-# (list) Additional android.manifest permissions
-#android.add_permissions =
-
-# (str) The platform used to build the app
-#platform = 
-
-# (list) List of files to include in the android project
-#android.extra_files =
-
-# (list) List of files to include in the ios project
-#ios.extra_files =
-
-# (list) List of build options
-#build_options =
-
-# (str) Custom cython path
-#cython.path =
-
-# (list) Custom android manifest permissions
-#android.add_permissions =
-
-# (str) Custom android ant options
-#android.ant_options =
-
-# (str) Path to a custom keystore file
-#android.release_keystore =
-
-# (str) Custom keystore password
-#android.release_keypassword =
-
-# (str) Custom keystore alias password
-#android.release_keyalias =
-
-# (str) Full path to your custom Java class
-#android.custom_class =
-
-# (str) Path to the custom manifest file
-#android.manifest =
-
-# (str) Custom android plugin
-#android.plugin =
-
-# (str) Additional arguments to pass to the android build system
-#android.extra_args =
-
-# (str) Additional arguments to pass to the ios build system
-#ios.extra_args =
-
-# (str) Additional arguments to pass to the cython build system
-#cython.extra_args =
-
-# (str) Full path to the Kivy source code
-#kivy.source = 
-
-# (str) Kivy git branch to use (default is master)
-#kivy.branch = master
-
-# (list) Additional python dependencies
-#python.dependencies =
-
-# (str) Full path to your custom Kivy framework file
-#kivy.framework =
-
-# (str) Full path to your custom Kivy resource file
-#kivy.resources =
-
-# (str) Full path to your custom Kivy asset file
-#kivy.assets =
-
-# (list) Additional Kivy settings
-#kivy.settings =
-
-# (str) Full path to the custom android bootstrap file
-#android.bootstrap =
-
-# (list) Additional android libraries
-#android.additional_libs =
-
-# (str) The minimum API level to support
+# (int) Minimum API your APK will support.
 #android.minapi = 21
 
-# (str) Full path to the android SDK
+# (int) Android SDK version to use
+#android.sdk = 20
+
+# (str) Android NDK version to use
+#android.ndk = 17c
+
+# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
+#android.ndk_api = 21
+
+# (bool) Use --private data storage (True) or --dir public storage (False)
+#android.private_storage = True
+
+# (str) Android NDK directory (if empty, it will be automatically downloaded.)
+#android.ndk_path =
+
+# (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
 
-# (str) Path to the Android NDK
-#android.ndk_path =
+# (str) ANT directory (if empty, it will be automatically downloaded.)
+#android.ant_path =
 
-# (list) List of android extra directories
-#android.extra_dirs =
+# (bool) If True, then skip trying to update the Android sdk
+# This can be useful to avoid excess Internet downloads or save time
+# when an update is due and you just want to test/build your package
+# android.skip_update = False
 
-# (str) List of additional android manifest permissions
-#android.add_permissions =
+# (bool) If True, then automatically accept SDK license
+# agreements. This is intended for automation only. If set to False,
+# the default, you will be shown the license when first running
+# buildozer.
+android.accept_sdk_license = True
 
-# (list) List of android build options
-#android.build_options =
+# (str) Android entry point, default is ok for Kivy-based app
+#android.entrypoint = org.renpy.android.PythonActivity
 
-# (str) Path to the custom android bootstrap file
-#android.bootstrap =
+# (list) Pattern to whitelist for the whole project
+#android.whitelist =
 
-# (str) Path to the custom android NDK
-#android.ndk_path =
+# (str) Path to a custom whitelist file
+#android.whitelist_src =
 
-# (str) Custom android NDK build command
-#android.ndk_build =
+# (str) Path to a custom blacklist file
+#android.blacklist_src =
 
-# (list) List of additional python requirements
-#python.requirements =
+# (list) List of Java .jar files to add to the libs so that pyjnius can access
+# their classes. Don't add jars that you do not need, since extra jars can slow
+# down the build process. Allows wildcards matching, for example:
+# OUYA-ODK/libs/*.jar
+#android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
 
-# (str) Full path to your custom python script
-#python.custom_script =
+# (list) List of Java files to add to the android project (can be java or a
+# directory containing the files)
+#android.add_src =
 
-# (str) Full path to your custom python library
-#python.library =
+# (list) Android AAR archives to add (currently works only with sdl2_gradle
+# bootstrap)
+#android.add_aars =
 
-# (str) Custom python command
-#python.command =
+# (list) Gradle dependencies to add (currently works only with sdl2_gradle
+# bootstrap)
+#android.gradle_dependencies =
 
-# (str) The default python executable to use
-#python.executable =
+# (list) Java classes to add as activities to the manifest.
+#android.add_activites = com.example.ExampleActivity
 
-# (list) List of python extra directories
-#python.extra_dirs =
+# (str) python-for-android branch to use, defaults to master
+#p4a.branch = master
 
-# (str) List of additional python dependencies
-#python.dependencies =
+# (str) OUYA Console category. Should be one of GAME or APP
+# If you leave this blank, OUYA support will not be enabled
+#android.ouya.category = GAME
 
-# (str) Path to the custom python script file
-#python.script =
+# (str) Filename of OUYA Console icon. It must be a 732x412 png image.
+#android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
 
-# (str) Custom python build command
-#python.build =
+# (str) XML file to include as an intent filters in <activity> tag
+#android.manifest.intent_filters =
 
-# (str) The python version to use (default is 3)
-#python.version = 3
+# (str) launchMode to set for the main activity
+#android.manifest.launch_mode = standard
 
-# (str) Path to the custom python setup file
-#python.setup =
+# (list) Android additional libraries to copy into libs/armeabi
+#android.add_libs_armeabi = libs/android/*.so
+#android.add_libs_armeabi_v7a = libs/android-v7/*.so
+#android.add_libs_x86 = libs/android-x86/*.so
+#android.add_libs_mips = libs/android-mips/*.so
 
-# (list) Additional Kivy settings
-#kivy.settings =
+# (bool) Indicate whether the screen should stay on
+# Don't forget to add the WAKE_LOCK permission if you set this to True
+#android.wakelock = False
 
-# (str) Custom Kivy build command
-#kivy.build =
+# (list) Android application meta-data to set (key=value format)
+#android.meta_data =
 
-# (str) Full path to the Kivy source code
-#kivy.source =
-
-# (list) List of Kivy extra directories
-#kivy.extra_dirs =
-
-# (str) List of additional Kivy dependencies
-#kivy.dependencies =
-
-# (str) Full path to your custom Kivy framework file
-#kivy.framework =
-
-# (str) Full path to your custom Kivy resource file
-#kivy.resources =
-
-# (str) Custom Kivy command
-#kivy.command =
-
-# (list) List of Kivy build options
-#kivy.build_options =
-
-# (str) The Kivy version to use (default is 1.11.1)
-#kivy.version =
-
-# (list) List of android additional manifest permissions
-#android.add_permissions =
-
-# (list) List of additional android directories
-#android.extra_dirs =
-
-# (str) The minimum SDK version to support (default is 21)
-#android.minsdk = 21
-
-# (str) Path to the custom android build file
-#android.build =
-
-# (str) Path to the custom android NDK
-#android.ndk =
-
-# (list) List of android build options
-#android.build_options =
-
-# (str) Path to the custom android bootstrap file
-#android.bootstrap =
-
-# (str) Path to the custom android NDK
-#android.ndk =
-
-# (str) Path to the custom android SDK
-#android.sdk =
-
-# (str) The package format for android
-#android.arch =
-
-# (str) Path to the custom android build file
-#android.build =
-
-# (str) Custom android command
-#android.command =
-
-# (list) List of additional android directories
-#android.extra_dirs =
-
-# (list) List of additional android build options
-#android.build_options =
-
-# (str) Path to the custom android bootstrap file
-#android.bootstrap =
-
-# (str) Path to the custom android SDK
-#android.sdk =
-
-# (str) Path to the custom android NDK
-#android.ndk =
-
-# (str) Path to the custom android build file
-#android.build =
-
-# (str) Custom android build command
-#android.build_command =
-
-# (str) Custom android command
-#android.command =
-
-# (list) List of additional android build options
-#android.build_options =
-
-# (list) List of additional android manifest permissions
-#android.add_permissions =
-
-# (list) List of android additional directories
-#android.extra_dirs =
-
-# (list) List of additional android libraries
-#android.additional_libs =
-
-# (list) List of android extra directories
-#android.extra_dirs =
-
-# (list) List of android build options
-#android.build_options =
-
-# (list) List of additional android libraries
-#android.additional_libs =
-
-# (str) Path to the custom android build file
-#android.build =
-
-# (str) Custom android command
-#android.command =
-
-# (str) Path to the custom android SDK
-#android.sdk =
-
-# (str) Path to the custom android NDK
-#android.ndk =
-
-# (str) Custom android build command
-#android.build_command =
-
-# (str) Path to the custom android bootstrap file
-#android.bootstrap =
-
-# (str) The package format for android
-#android.arch =
-
-# (list) Additional Kivy requirements
-#kivy.additional_requirements =
-
-# (list) List of additional Kivy directories
-#kivy.extra_dirs =
-
-# (str) Custom Kivy build command
-#kivy.build_command =
-
-# (str) Path to the Kivy source code
-#kivy.source =
-
-# (list) List of Kivy build options
-#kivy.build_options =
-
-# (list) List of additional Kivy libraries
-#kivy.additional_libs =
-
-# (str) Path to the custom python setup file
-#python.setup =
-
-# (list) List of additional python directories
-#python.extra_dirs =
-
-# (str) Path to the custom python script file
-#python.script =
-
-# (str) Path to the custom python build file
-#python.build =
-
-# (str) Custom python build command
-#python.build_command =
-
-# (str) Custom python command
-#python.command =
-
-# (list) List of additional python requirements
-#python.requirements =
-
-# (list) List of additional python dependencies
-#python.dependencies =
+# (list) Android library project to add (will be added in the
+# project.properties automatically.)
+#android.library_references =
+
+# (str) Android logcat filters to use
+#android.logcat_filters = *:S python:D
+
+# (bool) Copy library instead of making a libpymodules.so
+#android.copy_libs = 1
+
+# (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86
+android.arch = armeabi-v7a
+
+#
+# Python for android (p4a) specific
+#
+
+# (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
+#p4a.source_dir =
+
+# (str) The directory in which python-for-android should look for your own build recipes (if any)
+#p4a.local_recipes =
+
+# (str) Filename to the hook for p4a
+#p4a.hook =
+
+# (str) Bootstrap to use for android builds
+# p4a.bootstrap = sdl2
+
+# (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
+#p4a.port =
+
+
+#
+# iOS specific
+#
+
+# (str) Path to a custom kivy-ios folder
+#ios.kivy_ios_dir = ../kivy-ios
+# Alternately, specify the URL and branch of a git checkout:
+ios.kivy_ios_url = https://github.com/kivy/kivy-ios
+ios.kivy_ios_branch = master
+
+# Another platform dependency: ios-deploy
+# Uncomment to use a custom checkout
+#ios.ios_deploy_dir = ../ios_deploy
+# Or specify URL and branch
+ios.ios_deploy_url = https://github.com/phonegap/ios-deploy
+ios.ios_deploy_branch = 1.7.0
+
+# (str) Name of the certificate to use for signing the debug version
+# Get a list of available identities: buildozer ios list_identities
+#ios.codesign.debug = "iPhone Developer: <lastname> <firstname> (<hexstring>)"
+
+# (str) Name of the certificate to use for signing the release version
+#ios.codesign.release = %(ios.codesign.debug)s
+
+
+[buildozer]
+
+# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+log_level = 1
+
+# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
+warn_on_root = 1
+
+# (str) Path to build artifact storage, absolute or relative to spec file
+# build_dir = ./.buildozer
+
+# (str) Path to build output (i.e. .apk, .ipa) storage
+# bin_dir = ./bin
+
+#    -----------------------------------------------------------------------------
+#    List as sections
+#
+#    You can define all the "list" as [section:key].
+#    Each line will be considered as a option to the list.
+#    Let's take [app] / source.exclude_patterns.
+#    Instead of doing:
+#
+#[app]
+#source.exclude_patterns = license,data/audio/*.wav,data/images/original/*
+#
+#    This can be translated into:
+#
+#[app:source.exclude_patterns]
+#license
+#data/audio/*.wav
+#data/images/original/*
+#
+
+
+#    -----------------------------------------------------------------------------
+#    Profiles
+#
+#    You can extend section / key with a profile
+#    For example, you want to deploy a demo version of your application without
+#    HD content. You could first change the title to add "(demo)" in the name
+#    and extend the excluded directories to remove the HD content.
+#
+#[app@demo]
+#title = My Application (demo)
+#
+#[app:source.exclude_patterns@demo]
+#images/hd/*
+#
+#    Then, invoke the command line with the "demo" profile:
+#
+#buildozer --profile demo android debug
