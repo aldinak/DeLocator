@@ -36,6 +36,7 @@ jobs:
           sudo apt-get update -y -qq
           sudo apt-get install libsdl2-dev
           sudo apt install libgl1-mesa-dev
+          sudo apt-get install xclip xsel
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
       - name: Install libmtdev.so.1
