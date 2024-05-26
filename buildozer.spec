@@ -21,7 +21,7 @@ entrypoint = main.py
 
 # (list) Application requirements
 # Specify the modules used in your app here
-requirements = sdl2,python3,kivy==2.3.0,pillow,pygame,kivy_garden.mapview,geopy,pyperclip,requests,overpass
+requirements = sdl2,pygame,kivy_garden.mapview,geopy,pyperclip,requests,overpass,python3==3.10.12,kivy==2.3.0,Cython==0.29.33,Pillow,python-dotenv,pyjnius==1.5.0
 
 # (list) Garden requirements
 # Specify any Kivy Garden packages used in your app here
